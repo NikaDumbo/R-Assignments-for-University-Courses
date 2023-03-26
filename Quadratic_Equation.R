@@ -1,10 +1,16 @@
+# Quadratic Equation
+
 kvg <- function(a,b,c){
+  if(a == 0)
+    return(paste0("It's not a quadratic equation"))
+  
   print(paste0("Gantoleba: ", a, "x^2 + ", b, "x + ", c, "."))
   discriminant <- (b^2) - (4*a*c)
   
   if(discriminant < 0) {
     re <- -b/(2*a)
-    im <- (sqrt(abs(discriminant)))/(2*a)
+    im <- round((sqrt(abs(discriminant)))/(2*a), 5)
+
     return(paste0("X1= ", complex(real = re, imaginary = im), " X2= ",
                   complex(real = re, imaginary = -im)))
   }
@@ -18,26 +24,12 @@ kvg <- function(a,b,c){
   }
   else 
     x_int <- (-b) / (2*a)
+
   return(paste0("X= ", x_int))
 }
 
-sigrdze <- function(v){
-  res <- 0
-  for (i in v){
-    res = res + 1
-  }
-  return(res)
-}
+kvg(1, 7, 5)
 
-sashualo <- function(v){
-  s = 0
-  n = 0
-  for (i in v){
-    s = s + i
-    n = n + 1
-  }
-  return(s/n)
-}
+kvg(2, 4, 2)
 
-v <- c(1,2,3,4,5,6,7,8,9)
-
+kvg(1, 1, 5)
