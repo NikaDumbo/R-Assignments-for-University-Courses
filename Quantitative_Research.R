@@ -70,11 +70,21 @@ vectorMedian <- function(v) {
   return(median)
 }
 
+# Find vector variance
+vectorVariance <- function(v) {
+  n <- length(v)
+  mean_x <- mean(v)
+  sum_sq_diff <- sum((v - mean_x)^2)
+  variance <- sum_sq_diff/(n-1)
+  return(variance)
+}
+
 v <- c(9, 10, 12, 13, 13, 13, 15, 15, 16, 16, 18, 22, 23, 24, 24, 25)
 
-paste0("Vector size: ", vectorSize(v))
-paste0("Vector lenght: ", vectorLenght(v))
-paste0("Vector mean: ", vectorAVG(v))
-paste0("Vector Min: ", vectorMin(v))
-paste0("Vector Max: ", vectorMax(v))
-paste0("Vector Median: ", vectorMedian(v))
+paste("Vector size: ", vectorSize(v))
+paste("Vector lenght: ", vectorLenght(v))
+paste("Vector mean: ", vectorAVG(v))
+paste("Vector Min: ", vectorMin(v))
+paste("Vector Max: ", vectorMax(v))
+paste("Vector Median: ", vectorMedian(v))
+paste("Vector Variance: ", vectorVariance(v))
